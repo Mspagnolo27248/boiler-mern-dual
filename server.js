@@ -19,8 +19,11 @@ app.use(express.json());
 const NODE_ENV = process.env.NODE_ENV
 if(NODE_ENV==="prod"){
     app.use(express.static(path.resolve(__dirname, "./client/build")));
-
 }
+
+
+
+
 
 
 //Database Connections
@@ -37,7 +40,7 @@ const User = mongoose.model("User", userSchema)
 
 app.get("/", (req, res) => {
     console.log('Server API data here')
-
+    res.send({test:"Mike"})
 })
 
 
